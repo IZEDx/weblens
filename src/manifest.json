@@ -1,0 +1,10 @@
+{
+  "short_name": "weblens",
+  "name": "weblens",
+  "icons": [
+  ],
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#484848",
+  "theme_color": "#e0e2e4"
+}
