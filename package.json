@@ -1,0 +1,24 @@
+{
+  "name": "weblens",
+  "version": "1.0.0",
+  "description": "",
+  "author": "IZED",
+  "private": true,
+  "scripts": {
+    "build": "stencil build --prerender",
+    "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
+    "devWithSW": "sd concurrent \"stencil build --dev --service-worker --watch\" \"stencil-dev-server\" ",
+    "serve": "stencil-dev-server",
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    "@stencil/core": "latest",
+    "@stencil/router": "latest"
+  },
+  "devDependencies": {
+    "@stencil/dev-server": "latest",
+    "@stencil/sass": "latest",
+    "@stencil/utils": "latest",
+    "typescript": "next"
+  }
+}
