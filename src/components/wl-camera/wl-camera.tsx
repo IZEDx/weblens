@@ -21,7 +21,7 @@ export class Camera {
 
         console.log(this.videoElement);
         try {
-            const stream = await navigator.mediaDevices.getUserMedia({video: true});
+            const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: { exact: "environment" } } });
             this.videoElement.srcObject = stream;
         } catch(err) {
             this.cameraUnavailable.emit(err);
