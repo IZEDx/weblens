@@ -6,7 +6,7 @@ exports.config = {
         {
             type: 'www',
             serviceWorker: {
-                swSrc: 'src/sw.ts'
+                swSrc: 'src/sw.js'
             }
         }
     ],
