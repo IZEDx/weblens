@@ -11,6 +11,7 @@ function hasGetUserMedia() {
 export class Camera {
 
     @Event() cameraUnavailable: EventEmitter<Error>;
+    @Event() cameraAvailable: EventEmitter<MediaStream>;
     private videoElement: HTMLVideoElement;
 
 	async componentDidLoad() {
@@ -19,10 +20,10 @@ export class Camera {
             return;
         }
 
-        console.log(this.videoElement);
         try {
             const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: { exact: "environment" } } });
             this.videoElement.srcObject = stream;
+            this.cameraAvailable.emit(stream);
         } catch(err) {
             this.cameraUnavailable.emit(err);
         }

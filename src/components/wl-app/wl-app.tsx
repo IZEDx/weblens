@@ -18,6 +18,10 @@ export class App {
         this.status = err.detail.toString();
     }
 
+    @Listen("cameraAvailable")
+    handleCameraAvailable(stream: MediaStream) {
+        this.status = "Camera found";
+    }
 
 	render() {
 		return (
