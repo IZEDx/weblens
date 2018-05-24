@@ -1,20 +1,21 @@
-import '@stencil/core';
-import { Component, Listen } from '@stencil/core';
+import { Component, Listen, State } from "@stencil/core";
 
 
 @Component({
-	tag: 'wl-app',
-	styleUrl: 'wl-app.scss'
+	tag: "wl-app",
+	styleUrl: "wl-app.scss"
 })
 export class App {
+
+    @State() status = "Initializing...";
 
 	componentDidLoad() {
 	}
 
     
     @Listen("cameraUnavailable")
-    handleCameraUnavailable(err: Error) {
-        console.error(err);
+    handleCameraUnavailable(err: CustomEvent) {
+        this.status = err.detail.toString();
     }
 
 
@@ -22,6 +23,7 @@ export class App {
 		return (
             <main>
                 <wl-camera />
+                <aside class="status">{this.status}</aside>
             </main>
         );
 	}

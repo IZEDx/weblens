@@ -18,7 +18,6 @@
   "devDependencies": {
     "@stencil/dev-server": "latest",
     "@stencil/sass": "latest",
-    "@stencil/utils": "latest",
-    "typescript": "next"
+    "@stencil/utils": "latest"
   }
 }
