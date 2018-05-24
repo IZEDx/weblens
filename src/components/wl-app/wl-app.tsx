@@ -21,6 +21,7 @@ export class App {
     @Listen("cameraAvailable")
     handleCameraAvailable(stream: MediaStream) {
         this.status = "Camera found";
+        console.log(stream);
     }
 
 	render() {
